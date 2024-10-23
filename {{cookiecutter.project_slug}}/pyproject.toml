@@ -5,6 +5,13 @@ description = "{{ cookiecutter.project_description }}"
 authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 readme = "README.md"
 packages = [{include = "{{ cookiecutter.project_slug }}"}]
+repository = "https://github.com/{{ cookiecutter.author}}/flomo2md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -72,3 +79,7 @@ line-ending = "auto"
 
 [tool.pytest.ini_options]
 addopts = "-s -v"
+
+
+[tool.poetry.scripts]
+{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.__main__:main"
