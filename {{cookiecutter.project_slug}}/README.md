@@ -2,6 +2,8 @@
 
 {{ cookiecutter.project_description }}
 
+## Features
+
 ## Installation
 
 ## Usage
