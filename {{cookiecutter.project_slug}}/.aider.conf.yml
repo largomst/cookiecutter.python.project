@@ -290,7 +290,7 @@ watch-files: true
 #auto-lint: true
 
 ## Specify command to run tests
-#test-cmd: xxx
+test-cmd: poetry run pytest --testmon
 
 ## Enable/disable automatic testing after changes (default: False)
 #auto-test: false
