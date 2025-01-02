@@ -1,11 +1,13 @@
-[tool.poetry]
+[project]
 name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_description }}"
 authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 readme = "README.md"
 packages = [{include = "{{ cookiecutter.project_slug }}"}]
-repository = "https://github.com/{{ cookiecutter.author}}/flomo2md"
+repository = "https://github.com/{{ cookiecutter.author}}/{{ cookiecutter.project_slug }}"
+requires-python = ">=3.11"
+dependencies = []
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3",
@@ -13,15 +15,10 @@ classifiers = [
     "Operating System :: MacOS",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
 
 [tool.blue]
 line-length = 99
@@ -80,6 +77,5 @@ line-ending = "auto"
 [tool.pytest.ini_options]
 addopts = "-s -v"
 
-
-[tool.poetry.scripts]
+[project.scripts]
 {{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.__main__:main"
